@@ -1,25 +1,29 @@
 package Home_Work4;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
 public class Questions {
-    static int countQwe = 3;
+    String [] listQwestions;
+    String [] listVariants;
+    String [] listRightAnswers;
 
-    public static String showQwestions(int i){
-        String result;
-        String[] questions = new String[countQwe];
-        questions[0] = "1. Сколько цифр потребуется для записи числа девятьсот шесть тысяч семьсот пятнадцать? " +
-                "\n Варианты ответов: \n 1) 5                2) 6               3) 7                4) 8 ";
-
-        questions[1] = "2. Найди число, предыдущее для числа 70 900 000. " +
-                "\n Варианты ответов: \n 1) 70 999 999           2) 70 900 001          3) 70 899 999           4) 70 900 009";
-        questions[2] = "3. Найди решение примера: 800 000 : 1 000. " +
-                "\n Варианты ответов: \n 1) 8 000              2) 80               3) 800                 4) 80 000 ";
-        result = questions[i];
-        return result;
-
+    public void makeTest(int countQwe) throws IOException {
+        BufferedReader readQwestions = new BufferedReader(new InputStreamReader(System.in));
+        listQwestions = new String[countQwe];
+        listVariants = new String[countQwe];
+        listRightAnswers = new String[countQwe];
+        for (int i = 0; i < countQwe; i++) {
+            listQwestions[i] = readQwestions.readLine();
+        }
+        for (int i = 0; i < countQwe; i++) {
+            listVariants[i] = readQwestions.readLine();
+        }
+        for (int i = 0; i < countQwe; i++) {
+            listRightAnswers[i] = readQwestions.readLine();
+        }
     }
-
-
-
-
 
 }

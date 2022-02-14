@@ -21,7 +21,6 @@ public class Main {
         rightAnswer[2] = "3";
 
         for (int i = 0; i < questions.length; i++) {
-
             System.out.println(questions[i]);
             Scanner scan1 = new Scanner(System.in);
             String answer1 = scan1.nextLine();
