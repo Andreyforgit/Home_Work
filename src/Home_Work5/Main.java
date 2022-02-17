@@ -64,7 +64,5 @@ public class Main {
         long duration2 = finishDate2.getTime() - startDate2.getTime();
         System.out.println(list2);
         System.out.println("Сортировка выбором " + duration2 + "ms");
-
     }
-
 }
