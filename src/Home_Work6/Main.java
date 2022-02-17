@@ -30,30 +30,34 @@ public class Main {
         clientList.add(client2);
         clientList.add(client3);
 
+
         getAccounts(client1);
-        getAccounts(client2);
-        findClient(account1);
+        findClient(account3);
 
     }
     public static void getAccounts(Client client){
+        System.out.println("Список счётов клиента: " + client.name);
         for (int i = 0; i < clientList.size(); i++) {
-            if(clientList.get(i).equals(client)){
-                System.out.println("Список счётов клиента: " + client.name);
-                for (int j = 0; j < accountList.size(); j++) {
-                    if(accountList.get(j).accountOwner.equals(client.name)){
-                        System.out.println(accountList.get(j).accountNumber);
+            if(clientList.get(i).hashCode()==client.hashCode()) {
+                if (clientList.get(i).equals(client)) {
+                    for (int j = 0; j < accountList.size(); j++) {
+                        if (accountList.get(j).accountOwner.equals(client.name)) {
+                            System.out.println(accountList.get(j).accountNumber);
+                        }
                     }
                 }
             }
         }
     }
     public static void findClient(Account account){
+        System.out.println("Владелец счёта №" + account.accountNumber);
         for (int i = 0; i < accountList.size(); i++) {
-            if(accountList.get(i).equals(account)){
-                for (int j = 0; j < clientList.size() ; j++) {
-                    if(clientList.get(j).name.equals(account.accountOwner)){
-                        System.out.println("Владелец счёта №" + account.accountNumber);
-                        System.out.println(clientList.get(j).name + " " + clientList.get(j).age + " лет");
+            if(accountList.get(i).hashCode()==account.hashCode()) {
+                if (accountList.get(i).equals(account)) {
+                    for (int j = 0; j < clientList.size(); j++) {
+                        if (clientList.get(j).name.equals(account.accountOwner)) {
+                            System.out.println(clientList.get(j).name + " " + clientList.get(j).age + " лет");
+                        }
                     }
                 }
             }
